@@ -73,4 +73,3 @@ LIMIT 1;
 
 ---
 
-Happy querying! 🧬💻
