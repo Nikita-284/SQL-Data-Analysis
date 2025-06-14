@@ -51,6 +51,12 @@ ORDER BY total_diagnosis DESC;
 - `HAVING` applies the filter **after aggregation**, so it works harder for the same result.
 
 ---
+## ⚡️ Performance Reasoning
+- Using WHERE reduces the number of rows before the expensive GROUP BY happens.
+
+- Using HAVING does GROUP BY first — then checks IS NOT NULL, which means more computation (especially with large datasets).
+
+🛠️ Even modern query optimizers prefer WHERE here for better execution plans.
 
 ## 🔹 When to Use What:
 | Situation                          | Recommended Clause |
